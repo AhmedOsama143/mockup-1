@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login &mdash; CabinLuxe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .auth-page{display:flex;min-height:100vh}
+    .auth-image{flex:1;position:relative;display:none}
+    .auth-image img{width:100%;height:100%;object-fit:cover}
+    .auth-image__overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,23,20,.7),rgba(26,23,20,.4))}
+    .auth-image__content{position:absolute;bottom:60px;left:40px;right:40px;z-index:2;color:#fff}
+    .auth-image__content h2{font-family:var(--font-heading);font-size:2.5rem;color:#fff;margin-bottom:12px}
+    .auth-image__content p{font-size:1rem;color:rgba(255,255,255,.75);line-height:1.6}
+    .auth-form-side{flex:1;display:flex;align-items:center;justify-content:center;padding:40px;background:var(--color-white)}
+    .auth-form-container{width:100%;max-width:440px}
+    .auth-logo{font-family:var(--font-heading);font-size:1.75rem;font-weight:700;color:var(--color-charcoal);margin-bottom:48px;display:block}
+    .auth-logo span{color:var(--color-gold)}
+    .auth-form-container h1{font-family:var(--font-heading);font-size:2rem;margin-bottom:8px}
+    .auth-form-container .auth-subtitle{color:var(--color-medium-gray);font-size:.9375rem;margin-bottom:36px}
+    .form-group{margin-bottom:20px}
+    .form-group label{display:block;font-size:.8125rem;font-weight:600;color:var(--color-charcoal);margin-bottom:6px;letter-spacing:.03em}
+    .form-group input{width:100%;padding:14px 16px;border:1.5px solid var(--color-light-gray);border-radius:var(--border-radius);font-family:var(--font-body);font-size:.9375rem;color:var(--color-charcoal);background:var(--color-white);outline:none;transition:border-color .2s}
+    .form-group input:focus{border-color:var(--color-gold)}
+    .form-group input::placeholder{color:var(--color-medium-gray)}
+    .form-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+    .form-check{display:flex;align-items:center;gap:8px;font-size:.8125rem;color:var(--color-dark-gray)}
+    .form-check input[type=checkbox]{accent-color:var(--color-gold)}
+    .form-forgot{font-size:.8125rem;color:var(--color-gold);font-weight:500}
+    .form-forgot:hover{text-decoration:underline}
+    .auth-btn{width:100%;padding:16px;font-family:var(--font-body);font-size:.9375rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#fff;background:var(--color-charcoal);border:none;border-radius:var(--border-radius);cursor:pointer;transition:all .3s}
+    .auth-btn:hover{background:var(--color-gold)}
+    .auth-divider{display:flex;align-items:center;gap:16px;margin:28px 0;color:var(--color-medium-gray);font-size:.8125rem}
+    .auth-divider::before,.auth-divider::after{content:'';flex:1;height:1px;background:var(--color-light-gray)}
+    .social-btns{display:flex;gap:12px;margin-bottom:28px}
+    .social-btn{flex:1;padding:12px;border:1.5px solid var(--color-light-gray);border-radius:var(--border-radius);background:#fff;font-family:var(--font-body);font-size:.8125rem;font-weight:500;color:var(--color-charcoal);cursor:pointer;text-align:center;transition:border-color .2s}
+    .social-btn:hover{border-color:var(--color-charcoal)}
+    .auth-footer{text-align:center;font-size:.875rem;color:var(--color-medium-gray)}
+    .auth-footer a{color:var(--color-gold);font-weight:600}
+    .auth-footer a:hover{text-decoration:underline}
+    .auth-back{display:inline-flex;align-items:center;gap:6px;font-size:.8125rem;color:var(--color-medium-gray);margin-bottom:24px}
+    .auth-back:hover{color:var(--color-gold)}
+    @media(min-width:900px){.auth-image{display:block}}
+  </style>
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-image">
+      <img src="../images/living-moody.jpeg" alt="Luxury cabin interior">
+      <div class="auth-image__overlay"></div>
+      <div class="auth-image__content">
+        <h2>Welcome Back</h2>
+        <p>Sign in to access your bookings, saved cabins, and exclusive member offers.</p>
+      </div>
+    </div>
+    <div class="auth-form-side">
+      <div class="auth-form-container">
+        <a href="index.html" class="auth-back">&larr; Back to Home</a>
+        <a href="index.html" class="auth-logo">Cabin<span>Luxe</span></a>
+        <h1>Sign In</h1>
+        <p class="auth-subtitle">Welcome back. Enter your credentials to continue.</p>
+        <form>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="form-row">
+            <label class="form-check"><input type="checkbox"> Remember me</label>
+            <a href="#" class="form-forgot">Forgot password?</a>
+          </div>
+          <button type="submit" class="auth-btn">Sign In</button>
+        </form>
+        <div class="auth-divider">or continue with</div>
+        <div class="social-btns">
+          <button class="social-btn">Google</button>
+          <button class="social-btn">Facebook</button>
+          <button class="social-btn">Apple</button>
+        </div>
+        <p class="auth-footer">Don't have an account? <a href="register.html">Create one</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
