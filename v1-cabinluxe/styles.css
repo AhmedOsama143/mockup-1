@@ -1,6 +1,6 @@
 /* ==========================================================================
-   CABIN LUXE - Luxury Cabin E-Commerce Platform
-   Professional Mockup Stylesheet
+   EUROPEAN HUT (الكوخ الأوروبي) - Private Luxury Cabin Retreats
+   Cairo-Alexandria Desert Road
    
    HOW TO CUSTOMIZE:
    - Colors: Edit CSS variables in :root below
@@ -1415,6 +1415,129 @@ p {
   color: var(--color-gold);
 }
 
+/* ---------- Cabin Card Enhancements ---------- */
+.cabin-card__privacy-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 14px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  background: rgba(44, 62, 45, 0.1);
+  border-radius: 100px;
+}
+
+.cabin-card__checkin {
+  font-size: 0.8125rem;
+  color: var(--color-medium-gray);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-light-gray);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Booking Rules Section ---------- */
+.rules__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rule-card {
+  padding: var(--spacing-lg);
+  background: var(--color-cream);
+  border-radius: var(--border-radius-lg);
+  border-left: 4px solid var(--color-gold);
+  transition: all var(--transition-normal);
+}
+
+.rule-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.rule-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-bottom: 8px;
+}
+
+.rule-card p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-dark-gray);
+}
+
+/* ---------- Location Section ---------- */
+.location__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.location__details {
+  margin: var(--spacing-lg) 0;
+}
+
+.location__detail {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-sm);
+  border-left: 2px solid var(--color-gold);
+}
+
+.location__detail h4 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-bottom: 4px;
+}
+
+.location__detail p {
+  font-size: 0.9375rem;
+  color: var(--color-medium-gray);
+  line-height: 1.6;
+}
+
+.location__image {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.location__image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.location__image:hover img {
+  transform: scale(1.05);
+}
+
+/* ---------- Footer Enhancements ---------- */
+.footer__brand-arabic {
+  font-size: 1.25rem;
+  color: var(--color-gold);
+  margin-bottom: var(--spacing-sm);
+  direction: rtl;
+}
+
+.footer__info-item {
+  display: block;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
 /* ---------- Responsive Design ---------- */
 @media (max-width: 1200px) {
   .cabins__header {
@@ -1425,6 +1548,10 @@ p {
 }
 
 @media (max-width: 1024px) {
+  .grid--2 {
+    grid-template-columns: 1fr;
+  }
+
   .grid--3 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1460,6 +1587,19 @@ p {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .location__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .location__image img {
+    height: 350px;
+  }
+
+  .rules__grid {
+    grid-template-columns: 1fr;
   }
 
   .footer__grid {
@@ -1536,6 +1676,18 @@ p {
   }
 
   .experience__highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .location__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location__image img {
+    height: 280px;
+  }
+
+  .rules__grid {
     grid-template-columns: 1fr;
   }
 
