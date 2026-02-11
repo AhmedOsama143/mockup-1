@@ -492,7 +492,14 @@ p {
   height: 1px;
   background: var(--color-gold);
 }
-
+.hero__title h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.1;
+  max-width: 680px;
+  margin-bottom: var(--spacing-md);
+}
 .hero__title {
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 700;
